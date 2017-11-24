@@ -3,12 +3,12 @@
 
 typedef struct
 {
-    void (*02_init) (void);
-    void (*02_draw) (void);
-    void (*02_free) (void);
+    void (*vfx_init) (void);
+    void (*vfx_draw) (void);
+    void (*vfx_free) (void);
 }
-t_iss_02_ops;
+t_iss_vfx_ops;
 
-extern t_iss_02_ops p_o02EmptyOpenGLTest;
+extern t_iss_vfx_ops p_ovfxEmptyOpenGLTest;
 
 #endif

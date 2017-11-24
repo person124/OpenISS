@@ -15,7 +15,7 @@ using namespace glm; */
 
 #include <common/shader.hpp>
 
-void 02_init()
+void vfx_init()
 {
 	// Initialise GLFW
 	if( !glfwInit() )
@@ -76,7 +76,7 @@ void 02_init()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 }
 
-void 02_free()
+void vfx_free()
 {
 	// Cleanup VBO
 	glDeleteBuffers(1, &vertexbuffer);
@@ -87,7 +87,7 @@ void 02_free()
 	glfwTerminate();
 }
 
-void 02_draw()
+void vfx_draw()
 {
 	do{
 
@@ -125,13 +125,13 @@ void 02_draw()
 
 int main(int argc, char** argv)
 {
-	p_o02EmptyOpenGLTest.02_init = &02_init;
-    	p_o02EmptyOpenGLTest.02_init = &02_draw;
-    	p_o02EmptyOpenGLTest.02_init = &02_free;
+	p_ovfxEmptyOpenGLTest.vfx_init = &vfx_init;
+    	p_ovfxEmptyOpenGLTest.vfx_init = &vfx_draw;
+    	p_ovfxEmptyOpenGLTest.vfx_init = &vfx_free;
 
-	02_init();
-	02_draw();
-	02_free();
+	vfx_init();
+	vfx_draw();
+	vfx_free();
 
 	return 0;
 }
